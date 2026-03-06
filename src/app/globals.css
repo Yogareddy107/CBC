@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FF7D29;
+  --color-primary-foreground: #ffffff;
+
+  --color-background: #FFFDF6;
+  --color-foreground: #1A1A1A;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #1A1A1A;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1A1A1A;
+
+  --color-muted: #F7F7F7;
+  --color-muted-foreground: #6B7280;
+
+  --color-accent: #FFF5ED;
+  --color-accent-foreground: #FF7D29;
+
+  --color-secondary: #F4F4F5;
+  --color-secondary-foreground: #1A1A1A;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #E5E7EB;
+  --color-input: #E5E7EB;
+  --color-ring: #FF7D29;
+
+  --radius-lg: 0.75rem;
+  --radius-md: calc(0.75rem - 2px);
+  --radius-sm: calc(0.75rem - 4px);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base styles */
+:root {
+  --background: #FFFDF6;
+  --foreground: #1A1A1A;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

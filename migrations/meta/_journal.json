@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1772288686275,
+      "tag": "0000_flippant_puff_adder",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1772288686276,
+      "tag": "0001_add_subscriptions",
+      "breakpoints": true
+    }
+  ]
+}

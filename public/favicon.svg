@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#FFFDF6" rx="40"/>
+  
+  <!-- Orange gradient circle -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF7D29;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E65A00;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main circle -->
+  <circle cx="100" cy="100" r="85" fill="url(#grad)"/>
+  
+  <!-- Checkmark icon -->
+  <g stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polyline points="50,100 80,130 150,60"/>
+  </g>
+</svg>
