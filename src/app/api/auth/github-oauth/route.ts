@@ -6,7 +6,12 @@ export async function GET(request: NextRequest) {
     try {
         const { account } = await createAdminClient();
 
-        const origin = process.env.NEXT_PUBLIC_APP_URL || request.nextUrl.origin;
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+        if (!appUrl && process.env.NODE_ENV === 'production') {
+            console.warn('⚠️ NEXT_PUBLIC_APP_URL is not set in production. Redirects may fail or point to localhost.');
+        }
+
+        const origin = appUrl || request.nextUrl.origin;
         const redirectUrl = `${origin}/auth/github-callback`;
 
         console.log('GitHub OAuth Request:', {

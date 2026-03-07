@@ -130,7 +130,7 @@ export default function OAuthDiagnosticsPage() {
               <div className="text-sm text-[#1A1A1A]/70 ml-8 space-y-2">
                 <p>Your OAuth callback URL should be:</p>
                 <code className="block bg-gray-100 p-2 rounded mt-2 font-mono text-xs">
-                  {(typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000')}/auth/github-callback
+                  {typeof window !== 'undefined' ? window.location.origin : 'https://your-domain.com'}/auth/github-callback
                 </code>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function OAuthDiagnosticsPage() {
               <div className="text-sm text-[#1A1A1A]/70 ml-8 space-y-2">
                 <p>Your Google OAuth callback URL should be:</p>
                 <code className="block bg-gray-100 p-2 rounded mt-2 font-mono text-xs">
-                  {(typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000')}/auth/google-callback
+                  {typeof window !== 'undefined' ? window.location.origin : 'https://your-domain.com'}/auth/google-callback
                 </code>
               </div>
             </div>
