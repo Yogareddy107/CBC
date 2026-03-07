@@ -10,7 +10,9 @@ export const account = new Account(client);
 export { ID } from 'appwrite';
 
 export async function signInWithGitHubClient() {
-  const origin = typeof window !== 'undefined' ? window.location.origin : (process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000');
+  const origin = typeof window !== 'undefined'
+    ? window.location.origin
+    : (process.env.NEXT_PUBLIC_APP_URL || 'https://cbc-delta.vercel.app');
   const redirectUrl = `${origin}/auth/github-callback`;
   const failureUrl = `${origin}/login?error=${encodeURIComponent('GitHub authentication was cancelled.')}`;
 
@@ -25,7 +27,9 @@ export async function signInWithGitHubClient() {
 }
 
 export async function signInWithGoogleClient() {
-  const origin = typeof window !== 'undefined' ? window.location.origin : (process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000');
+  const origin = typeof window !== 'undefined'
+    ? window.location.origin
+    : (process.env.NEXT_PUBLIC_APP_URL || 'https://cbc-delta.vercel.app');
   const redirectUrl = `${origin}/auth/google-callback`;
   const failureUrl = `${origin}/login?error=${encodeURIComponent('Google authentication was cancelled.')}`;
 

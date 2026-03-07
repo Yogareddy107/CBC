@@ -6,12 +6,12 @@ export async function GET(request: NextRequest) {
     try {
         const { account } = await createAdminClient();
 
-        const appUrl = process.env.NEXT_PUBLIC_APP_URL;
-        if (!appUrl && process.env.NODE_ENV === 'production') {
-            console.warn('⚠️ NEXT_PUBLIC_APP_URL is not set in production. Redirects may fail or point to localhost.');
-        }
+        const host = request.headers.get('x-forwarded-host') || request.headers.get('host');
+        const protocol = request.headers.get('x-forwarded-proto') || 'https';
+        const fallbackOrigin = host ? `${protocol}://${host}` : request.nextUrl.origin;
 
-        const origin = appUrl || request.nextUrl.origin;
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL;
+        const origin = appUrl || fallbackOrigin;
         const redirectUrl = `${origin}/auth/github-callback`;
 
         console.log('GitHub OAuth Request:', {
